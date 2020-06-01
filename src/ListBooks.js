@@ -3,21 +3,26 @@ import PropTypes from 'prop-types';
 import Book from './Book';
 
 function ListBooks(props) {
+  if (props.books.error) {
+    return (
+      <p>
+        Sorry. Could not find a book or author that matches your search text.
+      </p>
+    )
+  }
   return (
-    <div className="bookshelf-books">
-      <ol className="books-grid">
-        { props.books.map(book => {
-          return (
-            <li key={book.id}>
-              <Book
-                book={book}
-                onCategoryChange={props.onCategoryChange}
-              />
-            </li>
-          )
-        })}
-      </ol>
-    </div>
+    <ol className="books-grid">
+      { props.books.map(book => {
+        return (
+          <li key={book.id}>
+            <Book
+              book={book}
+              onCategoryChange={props.onCategoryChange}
+            />
+          </li>
+        )
+      })}
+    </ol>
   )
 }
 

@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Book(props) {
+  console.log('book', props.book.title)
+  const thumbnailURL = props.book.imageLinks.thumbnail || 'icons/default-book.svg'
+  const authors = props.book.authors ? props.book.authors : []
   return (
     <div className="book">
       <div className="book-top">
-        <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${props.book.imageLinks.thumbnail})` }}></div>
+        <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${thumbnailURL})` }}></div>
         <div className="book-shelf-changer">
           <select value={ props.book.shelf } onChange={(e) => props.onCategoryChange(e, props.book)}>
             <option value="move" disabled>Move to...</option>
@@ -17,7 +20,7 @@ function Book(props) {
         </div>
       </div>
       <div className="book-title">{ props.book.title }</div>
-      { props.book.authors.map((author, index) => {
+      { authors.map((author, index) => {
         return <div key={index} className="book-authors">{ author }</div>
       })}
       
