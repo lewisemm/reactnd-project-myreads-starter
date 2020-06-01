@@ -38,24 +38,30 @@ class MainPage extends Component {
           <div>
             <div className="bookshelf">
               <h2 className="bookshelf-title">Currently Reading</h2>
-              <ListBooks
-                books={ currentlyReadingBooks }
-                onCategoryChange={this.props.handleCategoryChange}
-              />
+              <div className="bookshelf-books">
+                <ListBooks
+                  books={ currentlyReadingBooks }
+                  onCategoryChange={this.props.handleCategoryChange}
+                />
+              </div>
             </div>
             <div className="bookshelf">
               <h2 className="bookshelf-title">Want to Read</h2>
-              <ListBooks
-                books={ wantToReadBooks }
-                onCategoryChange={this.props.handleCategoryChange}
-              />
+              <div className="bookshelf-books">
+                <ListBooks
+                  books={ wantToReadBooks }
+                  onCategoryChange={this.props.handleCategoryChange}
+                />
+              </div>
             </div>
             <div className="bookshelf">
               <h2 className="bookshelf-title">Read</h2>
-              <ListBooks
-                books={ readBooks }
-                onCategoryChange={this.props.handleCategoryChange}
-              />
+              <div className="bookshelf-books">
+                <ListBooks
+                  books={ readBooks }
+                  onCategoryChange={this.props.handleCategoryChange}
+                />
+              </div>
             </div>
           </div>
         </div>
