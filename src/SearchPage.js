@@ -53,7 +53,10 @@ class SearchPage extends Component {
           </div>
         </div>
         <div className="search-books-results">
-          <ListBooks books={this.state.books}/>
+          <ListBooks
+            books={this.state.books}
+            onCategoryChange={this.props.handleCategoryChange}
+          />
         </div>
       </div>
     )

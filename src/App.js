@@ -43,7 +43,10 @@ class BooksApp extends React.Component {
       <div className="app">
         <Route path='/search' render={({history}) => {
           return (
-            <SearchPage historyObject={history}/>
+            <SearchPage
+              historyObject={history}
+              handleCategoryChange={this.handleCategoryChange}
+            />
           )
         }}/>
         <Route exact path='/' render={({history}) => {
