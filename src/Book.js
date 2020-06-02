@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Book(props) {
-  console.log('book', props.book.title)
-  const thumbnailURL = props.book.imageLinks.thumbnail || 'icons/default-book.svg'
+  const imageLinks = props.book.imageLinks
+  const thumbnailURL = imageLinks && imageLinks.thumbnail ? imageLinks.thumbnail : ''
   const authors = props.book.authors ? props.book.authors : []
   return (
     <div className="book">
